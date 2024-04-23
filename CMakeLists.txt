@@ -8,3 +8,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 add_executable(${PROJECT_NAME}
 	src/main.cpp
 )
+
+add_subdirectory(vendor/glfw)
+add_subdirectory(vendor/glew)
+
+target_link_libraries(${PROJECT_NAME}
+	glfw
+	libglew_static
+)
